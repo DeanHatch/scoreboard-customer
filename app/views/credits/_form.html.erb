@@ -1,0 +1,27 @@
+<% puts credit.inspect() %>
+<% puts @customer.inspect() %>
+<% puts form_with(model: [@customer, credit], local: true) %>
+<!-- % puts form_with(model: credit, local: true) % -->
+<!-- %= form_with(model: credit, local: true) do |form| % -->
+<%= form_with(model: [@customer, credit], local: true) do |form| %>
+  <% if credit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(credit.errors.count, "error") %> prohibited this credit from being saved:</h2>
+
+      <ul>
+      <% credit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :origin %>
+    <%= form.text_field :origin, id: :credit_origin %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

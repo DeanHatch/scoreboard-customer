@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @credit.origin %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @credit.customer %>
+</p>
+
+<%= link_to 'Edit', edit_credit_path(@credit) %> |
+<%= link_to 'Back', customer_credits_path(@customer) %>

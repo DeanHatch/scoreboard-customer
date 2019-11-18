@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ScoreboardCustomer</title>
+    <%= csrf_meta_tags %>
+
+<link rel='stylesheet' id='twentyseventeen-fonts-css'  href='https://fonts.googleapis.com/css?family=Libre+Franklin%3A300%2C300i%2C400%2C400i%2C600%2C600i%2C800%2C800i&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='twentyseventeen-style-css'  href='http://deanhatch.online/wp-content/themes/twentyseventeen/style.css?ver=5.3' type='text/css' media='all' />
+<link rel='stylesheet' id='twentyseventeen-block-style-css'  href='http://deanhatch.online/wp-content/themes/twentyseventeen/assets/css/blocks.css?ver=1.1' type='text/css' media='all' />
+
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<body>
+    <%= image_tag "netting.jpg", {height: 200}  %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>

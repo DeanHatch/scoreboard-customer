@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+hcone:
+  origin: Purchased
+  customer: happyCustomer
+
+hctwo:
+  origin: Loyalty Program
+  customer: happyCustomer
+
+ucone:
+  origin: Purchased
+  customer: unhappyCustomer
