@@ -13,10 +13,29 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-<body>
-    <%= image_tag "netting.jpg", {height: 200}  %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<body class="page">
+  <div class="back">
+    <%= image_tag "netting.jpg",  class: "backcontent"  %>
+      <h1 class="mastheadtitle">Online-Scoreboard.Net</h1>
+  </div>
+  <div class="front">
+    <div class="frontcontent">
+
+    </div>
+   <div class="content">
+    <div class="top-menu">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <h4>Menu Items</h4>
+    </div> <!-- top-menu -->
+   </div> <!-- content -->
     <%= yield %>
+    <ul>
+    <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
+    </ul>
+    <ul>
+    <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
+    </ul>
+  </div> <!-- front -->
   </body>
 </html>
