@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_customer!
 
   # GET /customers
   # GET /customers.json
@@ -64,10 +65,11 @@ class CustomersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_customer
-      @customer = Customer.find(params[:id])
+      #@customer = Customer.find(params[:id])
+      puts current_customer
+      @customer = current_customer
     end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
+       # Never trust parameters from the scary internet, only allow the white list through.
     def customer_params
       params.fetch(:customer, {})
     end
