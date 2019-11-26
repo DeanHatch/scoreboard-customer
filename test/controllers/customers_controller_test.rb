@@ -1,26 +1,16 @@
 require 'test_helper'
 
 class CustomersControllerTest < ActionDispatch::IntegrationTest
+
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @customer = customers(:happyCustomer)
-  end
-
-  test "should get index" do
-    get customers_url
-    assert_response :success
-  end
-
-  test "should get new" do
-    get new_customer_url
-    assert_response :success
-  end
-
-  test "should create customer" do
-    assert_difference('Customer.count') do
-      post customers_url, params: { customer: {  } }
-    end
-
-    assert_redirected_to customer_url(Customer.last)
+    #sign_in @customer
+    sign_in customers(:happyCustomer)
+    puts "Customer: ", @customer.inspect()
+    #@request.env["devise.mapping"] = Devise.mappings[:customer]
+    #sign_in FactoryBot.create(:admin)
   end
 
   test "should show customer" do
@@ -38,11 +28,4 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to customer_url(@customer)
   end
 
-  test "should destroy customer" do
-    assert_difference('Customer.count', -1) do
-      delete customer_url(@customer)
-    end
-
-    assert_redirected_to customers_url
-  end
 end

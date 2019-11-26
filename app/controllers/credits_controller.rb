@@ -1,10 +1,6 @@
-class CreditsController < ApplicationController
+class CreditsController < BusinessController
   before_action :set_credit, only: [:show, :edit, :update, :destroy]
-    # Either obtain Customer id from parameters of from the current Credit
-  before_action :set_customer, only: [:index, :new, :create]
-  before_action :set_customer_from_credit, only: [:show, :edit, :destroy]
 
-  before_action :authenticate_customer!
 
   # GET /customers/1/credits
   # GET /customers/1/credits.json
@@ -70,14 +66,6 @@ class CreditsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_credit
       @credit = Credit.find(params[:id])
-    end
-
-    def set_customer
-      @customer = Customer.find(params[:customer_id])
-    end
-
-    def set_customer_from_credit
-      @customer = @credit.customer # retain owning Customer id
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
