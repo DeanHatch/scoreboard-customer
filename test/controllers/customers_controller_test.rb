@@ -5,10 +5,12 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   setup do
-    @customer = customers(:happyCustomer)
+    #@customer = customers(:happyCustomer)
     #sign_in @customer
+    #puts self.methods.sort.join('  ')
     sign_in customers(:happyCustomer)
     puts "Customer: ", @customer.inspect()
+    #puts "current_customer: ", current_customer
     #@request.env["devise.mapping"] = Devise.mappings[:customer]
     #sign_in FactoryBot.create(:admin)
   end
@@ -16,16 +18,6 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
   test "should show customer" do
     get customer_url(@customer)
     assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_customer_url(@customer)
-    assert_response :success
-  end
-
-  test "should update customer" do
-    patch customer_url(@customer), params: { customer: {  } }
-    assert_redirected_to customer_url(@customer)
   end
 
 end

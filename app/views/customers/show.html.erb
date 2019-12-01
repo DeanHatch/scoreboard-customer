@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customer_path %>
+<%= @customer.email %>
+has <%= @customer.credits.count%> credits
+
+<!-- %= link_to 'Edit', edit_customer_path(@customer) % --> |
+<!-- %= link_to 'Back', customer_path % -->
