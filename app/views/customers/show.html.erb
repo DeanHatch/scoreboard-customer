@@ -2,6 +2,10 @@
 
 <%= @customer.email %>
 has <%= @customer.credits.count%> credits
+<br/>
+<%= @customer.organization ? @customer.organization.inspect() : "No Organization Defined" %>
+
 
 <!-- %= link_to 'Edit', edit_customer_path(@customer) % --> |
 <!-- %= link_to 'Back', customer_path % -->
+

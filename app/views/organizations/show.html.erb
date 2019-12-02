@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @organization.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @organization.phone %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @organization.website %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @organization.customer_id %>
+</p>
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', organizations_path %>

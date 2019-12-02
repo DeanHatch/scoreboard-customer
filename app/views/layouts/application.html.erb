@@ -26,7 +26,7 @@
     <div class="top-menu">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-      <h4>Menu Items, including Purchase Competitions</h4>
+      <%= render 'menu', customer: @customer %>
     </div> <!-- top-menu -->
    </div> <!-- content -->
     <%= yield %>
