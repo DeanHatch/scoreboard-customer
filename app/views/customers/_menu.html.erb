@@ -1,15 +1,13 @@
 <div class="menu-top-menu-container">
 <ul id="top-menu" class="menu">
-<li id="menu-item-18" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-18">
-  <%= link_to('Update Profile', customer_path) %></li>
-<li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19">
-  <%= link_to('Purchase Competitions', customer_path) %></li>
-<li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20">
-  <% if customer_signed_in? %>
-  <%= link_to('Logout', destroy_customer_session_path, method: :delete) %>        
-<% else %>
-  <%= link_to('Login', new_customer_session_path) %>  
-<% end %></li>
+  <li id="update-profile-menu-item" class="top-menu-item"><%= link_to('Update Profile', customer_path, class: 'top-menu-item') %></li>
+  <li id="buy-competitions-menu-item" class="top-menu-item"><%= link_to('Purchase Competitions', customer_path, class: 'top-menu-item') %></li>
+  <li id="login-logout-menu-item" class="top-menu-item">
+    <% if customer_signed_in? %>
+      <%= link_to('Logout', destroy_customer_session_path, method: :delete, class: 'top-menu-item') %>
+    <% else %>
+      <%= link_to('Login', new_customer_session_path, class: 'top-menu-item') %>
+    <% end %></li>
 </ul>
 </div>
 

@@ -3,9 +3,18 @@
 <%= @customer.email %>
 has <%= @customer.credits.count%> credits
 <br/>
-<%= @customer.organization ? @customer.organization.inspect() : "No Organization Defined" %>
-
-
+<hr/>
+<h3> Organization Profile:</h3>
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @customer.organization ? @customer.organization.name : "No Organization Defined" %></dd>
+  <dt>Phone:</dt>
+  <dd><%= @customer.organization ? @customer.organization.phone : "  " %></dd>
+  <dt>Website:</dt>
+  <dd><%= @customer.organization ? @customer.organization.website : "  " %></dd>
+</dl>
+<hr/>
+<h3><%= @customer.organization.name %> Competitions</h3>
 <!-- %= link_to 'Edit', edit_customer_path(@customer) % --> |
 <!-- %= link_to 'Back', customer_path % -->
 
