@@ -1,4 +1,5 @@
-<%= form_with(model: organization, local: true) do |form| %>
+<!-- %= form_with(model: organization, local: true) do |form| % -->
+<%= form_with(url: customer_organization_path, local: true) do |form| %>
   <% if organization.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(organization.errors.count, "error") %> prohibited this organization from being saved:</h2>
@@ -24,11 +25,6 @@
   <div class="field">
     <%= form.label :website %>
     <%= form.text_field :website, id: :organization_website %>
-  </div>
-
-  <div class="field">
-    <%= form.label :customer_id %>
-    <%= form.number_field :customer_id, id: :organization_customer_id %>
   </div>
 
   <div class="actions">

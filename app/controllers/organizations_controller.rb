@@ -65,7 +65,8 @@ class OrganizationsController < BusinessController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_organization
-      @organization = Organization.find(params[:id])
+      #@organization = Organization.find(params[:id])
+      @organization = @customer.organization # Customer has_one Organization
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

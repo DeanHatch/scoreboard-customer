@@ -1,5 +1,7 @@
 <div class="menu-top-menu-container">
 <ul id="top-menu" class="menu">
+  <li id="customer-home-menu-item" class="top-menu-item"><%= link_to('Home', customer_path, class: 'top-menu-item') %></li>
+  <li id="update-organization-menu-item" class="top-menu-item"><%= link_to('Update Organization Profile', edit_customer_organization_path, class: 'top-menu-item') %></li>
   <li id="update-profile-menu-item" class="top-menu-item"><%= link_to('Update Profile', customer_path, class: 'top-menu-item') %></li>
   <li id="buy-competitions-menu-item" class="top-menu-item"><%= link_to('Purchase Competitions', customer_path, class: 'top-menu-item') %></li>
   <li id="login-logout-menu-item" class="top-menu-item">
