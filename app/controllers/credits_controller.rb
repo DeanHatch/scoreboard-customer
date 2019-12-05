@@ -1,5 +1,7 @@
+  # This inherits from BusinessController, which is the Controller for
+  # all Customer-related Business operations.
 class CreditsController < BusinessController
-  before_action :set_credit, only: [:show, :edit, :update, :destroy]
+  before_action :set_credit, only: [:show, :edit, :update]
 
 
   # GET /customers/1/credits
@@ -49,16 +51,6 @@ class CreditsController < BusinessController
         format.html { render :edit }
         format.json { render json: @credit.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /credits/1
-  # DELETE /credits/1.json
-  def destroy
-    @credit.destroy
-    respond_to do |format|
-      format.html { redirect_to customer_credits_url(@customer), notice: 'Credit was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
