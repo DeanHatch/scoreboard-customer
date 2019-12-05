@@ -44,10 +44,8 @@ class CreditsController < BusinessController
     respond_to do |format|
       if @credit.update(credit_params)
         format.html { redirect_to @credit, notice: 'Credit was successfully updated.' }
-        format.json { render :show, status: :ok, location: @credit }
       else
         format.html { render :edit }
-        format.json { render json: @credit.errors, status: :unprocessable_entity }
       end
     end
   end
