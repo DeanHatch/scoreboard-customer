@@ -1,0 +1,72 @@
+= Overview
+
+Online-Scoreboard.net is an online service that keeps track of sporting schedules and results. Only
+contests involving two contestants at a time will be included; track meets, golf tournaments, and other such
+contests involving a field of contestants competing against each other will not be included.
+
+------
+
+=Online-Scoreboard.net Customer Interface Functional Specification
+------
+ This functional specification is still in development
+ and will need to be revised several times before it is finalized.
+
+This component deals with a single role involved with the service, that of the Customer.
+
+*  Customers - Customers are the owners of Competitions and, as such, can create a Competition
+   and once a Competition is created, the owner can do anything to the Competition,
+   including setting or changing a password to limit Manager access and
+   setting or changing a password to limit Scorer access.
+
+
+== Non Goals
+
+
+This version will not support the following features, although it is anticipated that it
+might become a feature in a subsequent version in the near future:
+
+* Include Customer's own logo.
+
+These  features will not be included and will likely never be:
+
+* Make a Silk Purse from a Sow's Ear.
+* Read the user's mind.
+
+
+== Web Page Specifications
+
+ The web pages described here merely give the underlying
+ functionality and flow of the application. The actual look
+ and feel will be developed iteratively over time with user feedback.
+
+The overall layout will be the same for nearly all the Web Pages. The layout will consist
+of a banner at the top, a Navigation Panel on the left, main content to the right of the 
+Navigation Panel, and brief footer information at the bottom. The Navigation Panel will 
+have links which will vary based on the context. Instructions may be provided below
+the navigation links. In the main content, a status message and other informational
+messages will be displayed in a separate section at the top of the main content.
+
+Exceptions to this overall layout will be noted in this specification.
+
+=== Home Pages
+
+This collection of pages will serve as a welcome to wandering visitors. It will provide
+an introduction to the service and encourage visitors to dive deeper into the service. 
+Visitors will be given the opportunity to become Customers.
+
+Navigation links point to the "Public Display" page, the "Scorer" page, the "Manager" page, 
+or to the "Login/Register" page.
+
+=== Login/Register Page
+
+Customer has a spot to enter their email address (which serves as their userid)
+and password to login.
+
+Also present on the page is a link to the Registration Page (below) for people
+who are not yet Customers.
+
+=== Registration Pages
+
+Customer-to-be has a spot to enter their email address (which will be their userid)
+and a login password. They will need to enter this password a second time to confirm.
+A second Registration Page will capture some more particulars about the new Customer.
