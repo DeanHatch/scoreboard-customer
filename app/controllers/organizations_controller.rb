@@ -1,6 +1,6 @@
 class OrganizationsController < BusinessController
 
-  before_action :set_organization, only: [:show, :edit, :update, :destroy]
+  before_action :set_organization, only: [:show, :edit, :update]
 
   # GET /organizations
   # GET /organizations.json
@@ -43,7 +43,7 @@ class OrganizationsController < BusinessController
   def update
     respond_to do |format|
       if @organization.update(organization_params)
-        format.html { redirect_to @organization, notice: 'Organization was successfully updated.' }
+        format.html { redirect_to customer_url, notice: 'Organization was successfully updated.' }
         format.json { render :show, status: :ok, location: @organization }
       else
         format.html { render :edit }
@@ -52,21 +52,14 @@ class OrganizationsController < BusinessController
     end
   end
 
-  # DELETE /organizations/1
-  # DELETE /organizations/1.json
-  def destroy
-    @organization.destroy
-    respond_to do |format|
-      format.html { redirect_to organizations_url, notice: 'Organization was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_organization
       #@organization = Organization.find(params[:id])
       @organization = @customer.organization # Customer has_one Organization
+      puts @customer.inspect()
+      puts @organization.inspect()
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

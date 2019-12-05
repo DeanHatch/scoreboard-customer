@@ -1,9 +1,5 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><!-- %= notice % --></p>
 
-<%= @customer.email %>
-has <%= @customer.credits.count%> credits
-<br/>
-<hr/>
 <h3> Organization Profile:</h3>
 <dl>
   <dt>Name:</dt>
@@ -14,7 +10,9 @@ has <%= @customer.credits.count%> credits
   <dd><%= @customer.organization ? @customer.organization.website : "  " %></dd>
 </dl>
 <hr/>
+<%= @customer.organization.name %>
+has <%= @customer.credits.count%> credits
+<br/>
+<hr/>
 <h3><%= @customer.organization.name %> Competitions</h3>
-<!-- %= link_to 'Edit', edit_customer_path(@customer) % --> |
-<!-- %= link_to 'Back', customer_path % -->
-
+<%= @customer.methods.sort.join(' ') %>
