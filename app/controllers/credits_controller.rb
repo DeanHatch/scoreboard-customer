@@ -28,10 +28,11 @@ class CreditsController < BusinessController
   # POST /credits.json
   def create
     @credit = Credit.new(credit_params)
+    @credit.customer = @customer  # from session, not from params
 
     respond_to do |format|
       if @credit.save
-        format.html { redirect_to @credit, notice: 'Credit was successfully created.' }
+        format.html { redirect_to customer_path, notice: 'Credit was successfully purchased.' }
       else
         format.html { render :new }
       end
@@ -43,7 +44,7 @@ class CreditsController < BusinessController
   def update
     respond_to do |format|
       if @credit.update(credit_params)
-        format.html { redirect_to @credit, notice: 'Credit was successfully updated.' }
+        format.html { redirect_to customer_path, notice: 'Credit was successfully updated.' }
       else
         format.html { render :edit }
       end

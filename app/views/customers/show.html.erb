@@ -13,6 +13,14 @@
 <%= @customer.organization.name %>
 has <%= @customer.credits.count%> credits
 <br/>
+<table>
+  <tr> <td>How Obtained</td><td>When</td></tr>
+  <% @customer.credits.each do |cr| %>
+    <tr>
+    <td><%= cr.origin %></td>
+    <td><%= cr.created_at %></td>
+    </tr>
+  <% end %>
+</table>
 <hr/>
 <h3><%= @customer.organization.name %> Competitions</h3>
-<%= @customer.methods.sort.join(' ') %>

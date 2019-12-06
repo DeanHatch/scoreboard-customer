@@ -11,7 +11,7 @@ contests involving a field of contestants competing against each other will not 
  This functional specification is still in development
  and will need to be revised several times before it is finalized.
 
-This component deals with a single role involved with the service, that of the Customer.
+This component deals with a single role involved with the service, the Customer.
 
 *  Customers - Customers are the owners of Competitions and, as such, can create a Competition
    and once a Competition is created, the owner can do anything to the Competition,
