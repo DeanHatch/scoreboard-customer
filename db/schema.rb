@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20191121180028) do
 
-  create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "admins", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20191121180028) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "alert_requests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "alert_requests", force: :cascade do |t|
     t.string "type"
     t.string "to_dest"
     t.string "at_domain"
@@ -35,14 +35,14 @@ ActiveRecord::Schema.define(version: 20191121180028) do
     t.index ["team_id"], name: "fk_rails_c6759dfb11"
   end
 
-  create_table "bcadvancements", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "bcadvancements", force: :cascade do |t|
     t.bigint "from_contest_id"
     t.string "wl"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "competitions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "competitions", force: :cascade do |t|
     t.string "name"
     t.integer "sport"
     t.integer "variety"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20191121180028) do
     t.index ["organization_id"], name: "fk_rails_6f3abb5cef"
   end
 
-  create_table "contestants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "contestants", force: :cascade do |t|
     t.bigint "competition_id"
     t.string "type"
     t.bigint "contest_id"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20191121180028) do
     t.index ["team_id"], name: "fk_rails_76e287fe1e"
   end
 
-  create_table "contests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "contests", force: :cascade do |t|
     t.bigint "competition_id"
     t.string "type"
     t.date "date"
@@ -105,14 +105,14 @@ ActiveRecord::Schema.define(version: 20191121180028) do
     t.index ["venue_id"], name: "fk_rails_9def925428"
   end
 
-  create_table "credits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "credits", force: :cascade do |t|
     t.string "origin"
     t.integer "customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "customers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "customers", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -138,14 +138,14 @@ ActiveRecord::Schema.define(version: 20191121180028) do
     t.index ["unlock_token"], name: "index_customers_on_unlock_token", unique: true
   end
 
-  create_table "groupingplaces", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "groupingplaces", force: :cascade do |t|
     t.bigint "grouping_id"
     t.integer "place"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "groupings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "groupings", force: :cascade do |t|
     t.bigint "competition_id"
     t.string "name"
     t.bigint "parent_id"
@@ -156,7 +156,7 @@ ActiveRecord::Schema.define(version: 20191121180028) do
     t.index ["parent_id"], name: "fk_rails_bfce7bee4d"
   end
 
-  create_table "organizations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "organizations", force: :cascade do |t|
     t.string "name"
     t.string "phone"
     t.string "website"
@@ -165,7 +165,7 @@ ActiveRecord::Schema.define(version: 20191121180028) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "teams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "teams", force: :cascade do |t|
     t.string "name"
     t.bigint "grouping_id"
     t.datetime "created_at", null: false
@@ -173,7 +173,7 @@ ActiveRecord::Schema.define(version: 20191121180028) do
     t.index ["grouping_id"], name: "fk_rails_e2fb33caf7"
   end
 
-  create_table "valid_dates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "valid_dates", force: :cascade do |t|
     t.date "gamedate"
     t.bigint "competition_id"
     t.datetime "created_at", null: false
@@ -181,7 +181,7 @@ ActiveRecord::Schema.define(version: 20191121180028) do
     t.index ["competition_id", "gamedate"], name: "index_valid_dates_on_competition_id_and_gamedate", unique: true
   end
 
-  create_table "valid_times", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "valid_times", force: :cascade do |t|
     t.bigint "competition_id"
     t.integer "from_time"
     t.integer "to_time"
@@ -190,7 +190,7 @@ ActiveRecord::Schema.define(version: 20191121180028) do
     t.index ["competition_id"], name: "index_valid_times_on_competition_id"
   end
 
-  create_table "venues", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "venues", force: :cascade do |t|
     t.string "name"
     t.bigint "competition_id"
     t.datetime "created_at", null: false
